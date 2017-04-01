@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>home</title>
+  </head>
+  <body>
+    {% load staticfiles %}
+    {{profile.username}}<br>
+    {% for board in boards %}
+    {{board.title}}<br>
+    {% endfor %}
+    {% for query in lists %}
+    {% for list in query %}
+    {{list.title}}<br>
+    {% for prey in cards %}
+    {% for card in prey %}
+    {{card.title}}
+    {% endfor %}
+    {% endfor %}
+    {% endfor %}
+    {% endfor %}
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="{% static "trello.js" %}"></script>
+  </body>
+</html>
